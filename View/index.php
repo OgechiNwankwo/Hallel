@@ -135,7 +135,7 @@ $all_journal = select_journal_ctr();
 
 					foreach ($all_journal as $journal) {
 					?>
-						<li style="background-image: url(<?php echo $journal['journal_image'] ?>); background-size:contain;">
+						<li style="background-image: url(../Images/journals/<?php echo $journal['journal_image'] ?>); background-size:contain;">
 							<div class="overlay-gradient"></div>
 							<div class="container">
 								<div class="col-md-6 col-md-offset-3 col-md-pull-3 js-fullheight slider-text">
