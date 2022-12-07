@@ -84,7 +84,7 @@ $journal_id = $_GET['journal_id'];
 					</div>
 					<div class="col-md-6 col-xs-6 text-center menu-1">
 						<ul>
-							<li class="has-dropdown active">
+							<li class="has-dropdown">
 								<a href="product.php">Journal</a>
 							<li><a href="about.php">About</a></li>
 						
