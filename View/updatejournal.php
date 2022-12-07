@@ -1,9 +1,9 @@
 <?php
-$journalId=$_GET['id'];
-$journalName=$_GET['journalName'];
-$journalDesc=$_GET['journaldes'];
-$journalPrice=$_GET['journalprice'];
-$journalKeyword=$_GET['journalKeyword'];
+$journalId = $_GET['id'];
+$journalName = $_GET['journalName'];
+$journalDesc = $_GET['journaldes'];
+$journalPrice = $_GET['journalprice'];
+$journalKeyword = $_GET['journalKeyword'];
 ?>
 
 
@@ -88,29 +88,17 @@ $journalKeyword=$_GET['journalKeyword'];
 						<div id="fh5co-logo"><a href="index.php">Hallel.inc</a></div>
 					</div>
 					<div class="col-md-6 col-xs-6 text-center menu-1">
-						<ul>
-							<li class="has-dropdown">
-								<a href="product.php">Hallel.inc</a>
-								<!-- <ul class="dropdown"> -->
-									<!-- <li><a href="single.php">Single Shop</a></li> -->
-								</ul>
-							</li>
-							<li><a href="about.php">About</a></li>
-							<li class="has-dropdown active">
-							<li><a href="customization.php">Customization</a></li>
-						</ul>
+
 					</div>
 					<div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">
 						<ul>
 							<li class="search">
 								<div class="input-group">
-									<input type="text" placeholder="Search..">
 									<span class="input-group-btn">
-										<button class="btn btn-primary" type="button"><i class="icon-search"></i></button>
 									</span>
 								</div>
 							</li>
-							<li class="shopping-cart"><a href="#" class="cart"><span><small>0</small><i class="icon-shopping-cart"></i></span></a></li>
+
 						</ul>
 					</div>
 				</div>
@@ -118,14 +106,13 @@ $journalKeyword=$_GET['journalKeyword'];
 			</div>
 		</nav>
 
-		<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/img_bg_2.jpg);">
+		<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/background.jpg);">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<div class="display-t">
 							<div class="display-tc animate-box" data-animate-effect="fadeIn">
-								<h1>Login</h1>
 
 							</div>
 						</div>
@@ -133,7 +120,7 @@ $journalKeyword=$_GET['journalKeyword'];
 				</div>
 			</div>
 		</header>
-     
+
 
 		<div id="fh5co-started">
 			<div class="container">
@@ -145,16 +132,16 @@ $journalKeyword=$_GET['journalKeyword'];
 				</div>
 				<div class="row animate-box">
 					<div class="col-md-8 col-md-offset-2">
-						<form class="form-inline" method="Post" action="../Admin/updatejournal.php " >
+						<form class="form-inline" method="Post" action="../Admin/updatejournal.php ">
 							<div class="col-md-6 col-sm-6">
 								<div class="form-group">
 									<label for="email" class="sr-only">Email</label>
 									<input type="text" class="form-control" id="journaln" name="journal_title" value="<?php echo $journalName; ?>" placeholder="journal title"><br>
-									<input type="number" class="form-control" id="journalp" name="journal_price" value="<?php echo $journalPrice; ?>"  placeholder="journal price"><br>
-									<input type="text" class="form-control" id="journaldesc" name="journal_desc"  value="<?php echo $journalDesc; ?>" placeholder="journal desc"><br>
-                                    <input type="text" class="form-control" id="journalk" name="journal_keywords" value="<?php echo $journalKeyword; ?>" placeholder="journal keywords">
-									<input type="hidden" class="form-control" id="journalid" name="journal_id" value="<?php echo $journalId; ?>" ><br>
-									
+									<input type="number" class="form-control" id="journalp" name="journal_price" value="<?php echo $journalPrice; ?>" placeholder="journal price"><br>
+									<input type="text" class="form-control" id="journaldesc" name="journal_desc" value="<?php echo $journalDesc; ?>" placeholder="journal desc"><br>
+									<input type="text" class="form-control" id="journalk" name="journal_keywords" value="<?php echo $journalKeyword; ?>" placeholder="journal keywords">
+									<input type="hidden" class="form-control" id="journalid" name="journal_id" value="<?php echo $journalId; ?>"><br>
+
 								</div>
 							</div>
 							<div class="col-md-6 col-sm-6">
@@ -175,7 +162,7 @@ $journalKeyword=$_GET['journalKeyword'];
 
 		<div class='alert' data-id="<? $_GET['message']; ?>"></div>
 
-	<?php endif; ?> 
+	<?php endif; ?>
 
 
 
