@@ -9,11 +9,9 @@ if (isset($_POST['submit'])) {
 
     $journal_keywords = $_POST['journal_keywords'];
 
-    $file = $_FILES['journal_image'];
     $journal_image = $_FILES['journal_image']['name'];
 
     $dst = "../View/images/journals/" . $tm.$journal_image;
-    $file_type = strtolower(pathinfo($file_dest, PATHINFO_EXTENSION));
 
 
     $move = move_uploaded_file($_FILES['journal_image']['tmp_name'], $dst);
@@ -27,5 +25,7 @@ if (isset($_POST['submit'])) {
             echo "failed";
             header("location:../View/journalform.php?warning=error");
         }
+    }else{
+        echo "File not moved";
     }
 }
