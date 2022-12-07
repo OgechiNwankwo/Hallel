@@ -255,9 +255,10 @@ if(!isset($_SESSION['cid'])){
 		const message = $(".message").data("id")
 		console.log(document.getElementById("c_email").value)
 
-		if(message && document.getElementById("c_email").value != ""){
-			payWithPaystack()
-		
+		if(message){
+			if(document.getElementById("c_email").value != ""){
+				payWithPaystack()
+			}
 		}
 		else{
 			Swal.fire({
