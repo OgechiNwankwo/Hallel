@@ -3,6 +3,8 @@ require_once("../Controller/customer_controller.php");
 
 if (isset($_POST['submit'])) {
 
+   
+
     $customer_name = $_POST['fullname'];
     $customer_email = $_POST['email'];
     $password = $_POST["password"];

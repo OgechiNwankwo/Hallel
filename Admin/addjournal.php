@@ -1,6 +1,7 @@
 <?php
 require_once("../Controller/journal_controller.php");
 if (isset($_POST['submit'])) {
+    $tm  = md5(time());
 
     $journal_title = $_POST['journal_title'];
     $journal_price = $_POST['journal_price'];
@@ -11,7 +12,7 @@ if (isset($_POST['submit'])) {
     $file = $_FILES['journal_image'];
     $journal_image = $_FILES['journal_image']['name'];
 
-    $dst = "../View/images/journals/" . $journal_image;
+    $dst = "../View/images/journals/" . $tm.$journal_image;
     $file_type = strtolower(pathinfo($file_dest, PATHINFO_EXTENSION));
 
 
