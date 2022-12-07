@@ -1,6 +1,10 @@
 <?php
 session_start();
-if(isset($_SESSION['cid'])){
+if(!isset($_SESSION['cid'])){
+	
+	header('Location: login.php');
+
+}
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -248,28 +252,28 @@ if(isset($_SESSION['cid'])){
 		// const paymentForm = document.getElementById('paymentForm');
 		// paymentForm.addEventListener("submit", payWithPaystack, false);
 
-		// const message = $(".message").data("id")
-		// console.log(document.getElementById("c_email").value)
+		const message = $(".message").data("id")
+		console.log(document.getElementById("c_email").value)
 
-		// if(message && document.getElementById("c_email").value != ""){
-		// 	payWithPaystack()
+		if(message && document.getElementById("c_email").value != ""){
+			payWithPaystack()
 		
-		// }
-		// else{
-			// Swal.fire({
-			// 	icon: "error",
-			// 	title: "Login First"
-			// }).then(()=>{
-			// 	window.location.href= "../View/login.php"
-			// })
-		// }
+		}
+		else{
+			Swal.fire({
+				icon: "error",
+				title: "Login First"
+			}).then(()=>{
+				window.location.href= "../View/login.php"
+			})
+		}
 
 		// PAYMENT FUNCTION
 		function payWithPaystack() {
 
 			let handler = PaystackPop.setup({
-				key: 'pk_test_aeac52408dfe068589d984dc145de1ea34aa8a1d',
-				//key: 'pk_live_bd5356607a881f3a0d6843b75d3172b74b9675cd', // Replace with your public key
+				//key: 'pk_test_aeac52408dfe068589d984dc145de1ea34aa8a1d',
+				key: 'pk_live_bd5356607a881f3a0d6843b75d3172b74b9675cd', // Replace with your public key
 				//pk_live_bd5356607a881f3a0d6843b75d3172b74b9675cd
 				email: document.getElementById("c_email").value,
 				amount: 2 * 100,
@@ -299,7 +303,3 @@ if(isset($_SESSION['cid'])){
 </body>
 
 </html>
-<?php
-}else{
-	header('Location: ./login.php');
-}

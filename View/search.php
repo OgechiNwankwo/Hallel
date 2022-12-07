@@ -76,7 +76,7 @@ require("../Controller/journal_controller.php");
 	<div class="fh5co-loader"></div>
 
 	<div id="page">
-		<nav class="fh5co-nav" role="navigation">
+	<nav class="fh5co-nav" role="navigation">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-3 col-xs-2">
@@ -86,18 +86,15 @@ require("../Controller/journal_controller.php");
 						<ul>
 							<li class="has-dropdown">
 								<a href="product.php">Journal</a>
-								<!-- <ul class="dropdown"> -->
-								<!-- <li><a href="single.php">Single Journal</a></li> -->
-							</ul>
-							</li>
 							<li><a href="about.php">About</a></li>
+
 							<li><a href="customization.php">Customization</a></li>
 						</ul>
 					</div>
 					<div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">
 						<ul>
 							<li class="search">
-                            <form action="search.php" method="POST">
+								<form action="search.php" method="POST">
 									<div class="input-group">
 										<input type="text" name="search_value" placeholder="Search.." id='search_value'>
 										<span class="input-group-btn">
@@ -138,49 +135,49 @@ require("../Controller/journal_controller.php");
 					</div>
 				</div>
 				<div class="row">
-				<?php
+					<?php
 
-                if(isset($_POST['search'])){
-                    $term = $_POST['search_value'];
-                    $search_result = search_journal_ctr($term);
-                }
+					if (isset($_POST['search'])) {
+						$term = $_POST['search_value'];
+						$search_result = search_journal_ctr($term);
+					}
 
-				// fetching all journal
-				// $journal_items = select_journal_ctr();
-				// $counter = 0;
-				foreach ($search_result as $journal) {
-					$id = $journal['journal_id'];			
+					// fetching all journal
+					// $journal_items = select_journal_ctr();
+					// $counter = 0;
+					foreach ($search_result as $journal) {
+						$id = $journal['journal_id'];
 
-				?>
-					
+					?>
+
 						<div class="col-md-4 text-center animate-box">
 							<div class="product">
 								<div class="product-grid" style=<?php echo "background-image:url({$journal['journal_image']})"; ?>>
 									<div class="inner">
 										<p>
 											<a href="single.php" class="icon"><i class="icon-shopping-cart"></i></a>
-											<a href=<?php echo"single.php?journal_id=".$id; ?> class="icon"><i class="icon-eye"></i></a>
+											<a href=<?php echo "single.php?journal_id=" . $id; ?> class="icon"><i class="icon-eye"></i></a>
 										</p>
 									</div>
 								</div>
 								<div class="desc">
-									<h3><a href="single.php"><?php echo $journal['journal_title'];?></a></h3>
-									<span class="price"> <span>&#8373;</span><?php echo $journal['journal_price'];?></span>
+									<h3><a href="single.php"><?php echo $journal['journal_title']; ?></a></h3>
+									<span class="price"> <span>&#8373;</span><?php echo $journal['journal_price']; ?></span>
 								</div>
 							</div>
 						</div>
-					
 
 
-				<?php
-				}
-				?>
+
+					<?php
+					}
+					?>
 				</div>
-				
+
 			</div>
 		</div>
 
-		
+
 
 		<footer id="fh5co-footer" role="contentinfo">
 			<div class="container">
@@ -198,24 +195,24 @@ require("../Controller/journal_controller.php");
 						</ul>
 					</div>
 
-				<div class="row copyright">
-					<div class="col-md-12 text-center">
-						<p>
-							<small class="block">&copy; 2022 Hallel.inc All Rights Reserved.</small>
-							<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://blog.gessato.com/" target="_blank">Gessato</a> &amp; <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
-						</p>
-						<p>
-						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
-						</ul>
-						</p>
+					<div class="row copyright">
+						<div class="col-md-12 text-center">
+							<p>
+								<small class="block">&copy; 2022 Hallel.inc All Rights Reserved.</small>
+								<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://blog.gessato.com/" target="_blank">Gessato</a> &amp; <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
+							</p>
+							<p>
+							<ul class="fh5co-social-icons">
+								<li><a href="#"><i class="icon-twitter"></i></a></li>
+								<li><a href="#"><i class="icon-facebook"></i></a></li>
+								<li><a href="#"><i class="icon-linkedin"></i></a></li>
+								<li><a href="#"><i class="icon-dribbble"></i></a></li>
+							</ul>
+							</p>
+						</div>
 					</div>
-				</div>
 
-			</div>
+				</div>
 		</footer>
 	</div>
 

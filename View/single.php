@@ -87,14 +87,14 @@ $journal_id = $_GET['journal_id'];
 							<li class="has-dropdown">
 								<a href="product.php">Journal</a>
 							<li><a href="about.php">About</a></li>
-						
+
 							<li><a href="customization.php">Customization</a></li>
 						</ul>
 					</div>
 					<div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">
 						<ul>
 							<li class="search">
-							<form action="search.php" method="POST">
+								<form action="search.php" method="POST">
 									<div class="input-group">
 										<input type="text" name="search_value" placeholder="Search.." id='search_value'>
 										<span class="input-group-btn">
@@ -154,7 +154,7 @@ $journal_id = $_GET['journal_id'];
 								<h2><?php echo $journal_items['journal_title'] ?></h2>
 								<p>
 									<a href="../Actions/cartprocess.php?journal_id=<?php echo $journal_items['journal_id'] ?>" class="btn btn-primary btn-outline btn-lg">Add to Cart</a>
-	
+
 								</p>
 							</div>
 						</div>
@@ -211,24 +211,24 @@ $journal_id = $_GET['journal_id'];
 					</ul>
 				</div>
 
-			<div class="row copyright">
-				<div class="col-md-12 text-center">
-					<p>
-						<small class="block">&copy; 2022 Hallel.inc All Rights Reserved.</small>
-						<small class="block"><a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://blog.gessato.com/" target="_blank">Gessato</a> &amp; <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
-					</p>
-					<p>
-					<ul class="fh5co-social-icons">
-						<li><a href="#"><i class="icon-twitter"></i></a></li>
-						<li><a href="#"><i class="icon-facebook"></i></a></li>
-						<li><a href="#"><i class="icon-linkedin"></i></a></li>
-						<li><a href="#"><i class="icon-dribbble"></i></a></li>
-					</ul>
-					</p>
+				<div class="row copyright">
+					<div class="col-md-12 text-center">
+						<p>
+							<small class="block">&copy; 2022 Hallel.inc All Rights Reserved.</small>
+							<small class="block"><a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://blog.gessato.com/" target="_blank">Gessato</a> &amp; <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
+						</p>
+						<p>
+						<ul class="fh5co-social-icons">
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-linkedin"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+						</ul>
+						</p>
+					</div>
 				</div>
-			</div>
 
-		</div>
+			</div>
 	</footer>
 	</div>
 
