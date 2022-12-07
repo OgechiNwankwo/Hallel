@@ -16,7 +16,7 @@ if(isset($_POST['submit'])){
     $journal_image= $_FILES['journal_image']['name'];
     $file_dest = $root_dir . basename($file["name"]);
     $upload_file_dest = $upload_root_dir . basename($file["name"]); 
-    $dst = "../View/images/journals".$journal_image;
+    $dst = "../View/images/journals/".$journal_image;
     $file_type = strtolower(pathinfo($file_dest, PATHINFO_EXTENSION));
 
     
