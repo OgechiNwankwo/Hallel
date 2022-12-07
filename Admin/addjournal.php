@@ -13,6 +13,7 @@ if(isset($_POST['submit'])){
     $root_dir = ".\\..\\images\\journals\\";
     $upload_root_dir = "../images/journals/";
     $file=$_FILES['journal_image'];
+    $journal_image= $_FILES['journal_image']['name'];
     $file_dest = $root_dir . basename($file["name"]);
     $upload_file_dest = $upload_root_dir . basename($file["name"]); 
     $dst = "../View/images/journals".$journal_image;
