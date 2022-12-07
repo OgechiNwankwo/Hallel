@@ -11,9 +11,9 @@ if(isset($_POST['customize'])){
 
     $customer_id = $_SESSION['cid'];
 
-    echo $dst . '<br>';
-    echo $customization_desc . '<br>';
-    echo $customer_id . '<br>';
+    // echo $dst . '<br>';
+    // echo $customization_desc . '<br>';
+    // echo $customer_id . '<br>';
     // exit();
 
 
