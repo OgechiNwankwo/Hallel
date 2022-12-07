@@ -255,8 +255,8 @@ if(!isset($_SESSION['cid'])){
 		const message = $(".message").data("id")
 		console.log(document.getElementById("c_email").value)
 
-		if(message){
-			if(document.getElementById("c_email").value != ""){
+		if(document.getElementById("c_email").value != ""){
+			if(message){
 				payWithPaystack()
 			}
 		}
