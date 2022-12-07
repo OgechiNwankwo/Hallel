@@ -11,12 +11,6 @@ if(isset($_POST['customize'])){
 
     $customer_id = $_SESSION['cid'];
 
-    // echo $dst . '<br>';
-    // echo $customization_desc . '<br>';
-    // echo $customer_id . '<br>';
-    // exit();
-
-
     $move = move_uploaded_file($_FILES['journal_image']['tmp_name'], $dst);
 
     if($move){
@@ -29,6 +23,10 @@ if(isset($_POST['customize'])){
         } else{
             echo "It did not add in your cart";
         }
+    }else{
+        echo "File upload didn't work";
     }
     
+}else{
+    echo "Nothing came in";
 }
