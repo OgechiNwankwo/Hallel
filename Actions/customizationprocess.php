@@ -11,14 +11,24 @@ if(isset($_POST['customize'])){
 
     $customer_id = $_SESSION['cid'];
 
-    move_uploaded_file($_FILES['journal_image']['tmp_name'], $dst);
-    
-    $result = insert_customization_ctr($dst,$customer_id, $customization_desc);
-    
-    if($result === true){
-        header('Location: ../View/customization.php?message=success');   
-    
-    } else{
-        echo "It did not add in your cart";
+    echo $dst . '<br>';
+    echo $customization_desc . '<br>';
+    echo $customer_id . '<br>';
+    // exit();
+
+
+    $move = move_uploaded_file($_FILES['journal_image']['tmp_name'], $dst);
+
+    if($move){
+
+        $result = insert_customization_ctr($dst,$customer_id, $customization_desc);
+        
+        if($result === true){
+            header('Location: ../View/customization.php?message=success');   
+        
+        } else{
+            echo "It did not add in your cart";
+        }
     }
+    
 }

@@ -1,6 +1,6 @@
 <?php
 
-include_once (dirname(__FILE__)) . '/../settings/core.php';
+include_once (dirname(__FILE__)) . '/../Settings/core.php';
 include_once (dirname(__FILE__)) . '/../Controller/cart_controller.php';
 
 
@@ -67,30 +67,6 @@ if (isset($_SESSION['cid'])) {
 //         }
 //     }
 
-//     //Increase the quantity in the cart
-//     if (isset($_GET['incID'])) {
-//         $p_id = $_GET['incID'];
-//         $cartItem = select_one_gst_controller($p_id, $ipAddress);
-       
-//         foreach ($cartItem as $item) {
-//             $oldQty = $item['quantity'];
-//             $newQty = $oldQty + 1;
-//             if (($stock_count['stock']) >= 0) {
-//                 $remain_stock = $stock_count['stock'] - 1;
-//                 if ($remain_stock <= 0) {
-//                     echo "<script>alert('Out of stock');document.location.href='../view/cart.php';</script>";
-//                 } else {
-                    
-//                     $result = update_cart_gst_controller($newQty, $p_id, $ipAddress);
-//                     echo "<script>document.location.href='../view/cart.php';</script>";
-//                 }
-//             } else {
-//                 echo "<script>alert('Out of stock');document.location.href='../view/cart.php';</script>";
-//             }
-//             echo "<script>document.location.href='../view/cart.php';</script>";
-//         }
-//     }
-// }
 
 
 // remove from cart

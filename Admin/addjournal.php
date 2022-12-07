@@ -14,14 +14,15 @@ if(isset($_POST['submit'])){
     $upload_root_dir = "../images/journals/";
     $file=$_FILES['journal_image'];
     $file_dest = $root_dir . basename($file["name"]);
-    $upload_file_dest = $upload_root_dir . basename($file["name"]);
+    $upload_file_dest = $upload_root_dir . basename($file["name"]); 
+    $dst = "../View/images/journals".$journal_image;
     $file_type = strtolower(pathinfo($file_dest, PATHINFO_EXTENSION));
 
     
-      $move = move_uploaded_file($file["tmp_name"],$file_dest);
+      $move = move_uploaded_file($file["tmp_name"],$dst);
 
         if ($move) {
-            $result = create_journal_ctr($journal_title,$journal_price,$journal_desc,$upload_file_dest,$journal_keywords);
+            $result = create_journal_ctr($journal_title,$journal_price,$journal_desc,$dst,$journal_keywords);
             if($result){
                 echo "success";
                 header("location:../View/adminindex.php?message=success");

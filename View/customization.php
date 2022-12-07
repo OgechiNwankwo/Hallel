@@ -1,9 +1,9 @@
 <?php
-session_start()
-
-?><!DOCTYPE HTML>
+session_start();
+if(isset($_SESSION['cid'])){
+?>
+<!DOCTYPE HTML>
 <html>
-
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -54,6 +54,8 @@ session_start()
 	<!-- Flexslider  -->
 	<link rel="stylesheet" href="css/flexslider.css">
 
+	<!-- PAYSTACK INLINE SCRIPT -->
+	<script src="https://js.paystack.co/v1/inline.js"></script>
 
 	<!-- Owl Carousel  -->
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -156,7 +158,7 @@ session_start()
 								</div>
 							</div>
 							<div class="form-group">
-								<input type="submit" value="Pay" id="submit" class="btn btn-primary" name="customize">
+								<button type="submit" class="btn btn-primary" name="customize">Pay</button>
 							</div>
 
 							<input type="hidden" id="c_email" value="<?php echo isset($_SESSION['c_email'])? $_SESSION['c_email'] : "" ; ?>" />
@@ -240,26 +242,27 @@ session_start()
 
 	<script src="./js/customization.js"></script>
 
-	<!-- PAYSTACK INLINE SCRIPT -->
-	<script src="https://js.paystack.co/v1/inline.js"></script>
+	
 
 	<script type="text/javascript">
 		// const paymentForm = document.getElementById('paymentForm');
 		// paymentForm.addEventListener("submit", payWithPaystack, false);
 
-		const message = $(".message").data("id")
-		console.log(document.getElementById("c_email").value)
+		// const message = $(".message").data("id")
+		// console.log(document.getElementById("c_email").value)
 
-		if(message && document.getElementById("c_email").value != ""){
-			payWithPaystack()
-		}else{
-			Swal.fire({
-				icon: "error",
-				title: "Login First"
-			}).then(()=>{
-				window.location.href= "../View/login.php"
-			})
-		}
+		// if(message && document.getElementById("c_email").value != ""){
+		// 	payWithPaystack()
+		
+		// }
+		// else{
+			// Swal.fire({
+			// 	icon: "error",
+			// 	title: "Login First"
+			// }).then(()=>{
+			// 	window.location.href= "../View/login.php"
+			// })
+		// }
 
 		// PAYMENT FUNCTION
 		function payWithPaystack() {
@@ -272,9 +275,6 @@ session_start()
 				amount: 2 * 100,
 				currency: 'GHS',
 				onClose: function() {
-
-					// alert('Transaction Cancelled.');
-
 					Swal.fire({
 						icon: 'error',
 						title: 'Transaction Cancelled.',
@@ -282,14 +282,14 @@ session_start()
 					})
 				},
 				callback: function(response) {
-
 					Swal.fire({
 						icon: 'success',
 						title: 'Transaction successful',
 
-					})
-					window.location = "../Actions/paymentprocess.php?reference=" + response.reference;
+					}).then(()=>{
 
+						window.location = "../Actions/paymentprocess.php?reference=" + response.reference;
+					})
 				}
 			});
 			handler.openIframe();
@@ -299,3 +299,7 @@ session_start()
 </body>
 
 </html>
+<?php
+}else{
+	header('Location: ./login.php');
+}

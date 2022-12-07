@@ -185,7 +185,6 @@ $userData =  select_customer_id_ctr($_SESSION['cid']);
             let handler = PaystackPop.setup({
                 key: 'pk_live_bd5356607a881f3a0d6843b75d3172b74b9675cd',
                 //key: 'pk_live_bd5356607a881f3a0d6843b75d3172b74b9675cd', // Replace with your public key
-                //pk_live_bd5356607a881f3a0d6843b75d3172b74b9675cd
                 email: document.getElementById("customer_email").value,
                 phone: document.getElementById("customer_contact").value,
                 amount: document.getElementById("pay").value * 100,
