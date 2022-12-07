@@ -93,7 +93,7 @@ require("../Functions/displayjournal.php");
 						</ul>
 					</div>
 					<div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">
-						
+
 					</div>
 				</div>
 
@@ -304,13 +304,13 @@ require("../Functions/displayjournal.php");
 
 	<?php if (isset($_GET['message'])) : ?>
 
-		<div class='alert' data-id="<? $_GET['message']; ?>"></div>
+		<div class='add' data-add="<?php echo $_GET['message']; ?>"></div>
 
 	<?php endif; ?>
 
 	<?php if (isset($_GET['message2'])) : ?>
 
-		<div class='alert' data-id="<? $_GET['message2']; ?>"></div>
+		<div class='update' data-update="<?php echo $_GET['message2']; ?>"></div>
 
 	<?php endif; ?>
 
@@ -338,7 +338,7 @@ require("../Functions/displayjournal.php");
 	<script src="js/main.js"></script>
 
 	<script>
-		const message = $(".alert").data("id")
+		const message = $(".add").data("add")
 
 		if (message) {
 			Swal.fire({
@@ -347,11 +347,7 @@ require("../Functions/displayjournal.php");
 				text: 'Your journal has been added successfully!',
 			})
 		}
-		console.log(message)
-	</script>
-
-	<script>
-		const message2 = $(".alert").data("id")
+		const message2 = $(".update").data("update")
 
 		if (message2) {
 			Swal.fire({
@@ -360,7 +356,6 @@ require("../Functions/displayjournal.php");
 				text: 'Your journal has been updated successfully!',
 			})
 		}
-		console.log(message)
 	</script>
 
 </body>
