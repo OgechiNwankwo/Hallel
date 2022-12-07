@@ -85,7 +85,7 @@ $total_price = total_checkout_lg_ctr($_SESSION['cid']);
 								<div class="row"><?php echo $item['journal_title'] ?></div>
 							</div>
 							<div class="col">
-								<a href="../Actions/quantitychange.php?decID=<?php echo $item['journal_id'] ?>">-</a><a href="#" class="border"><?php echo $item['quantity']?></a><a href="../Actions/quantitychange.php?incID=<?php echo $item['journal_id'] ?>">+</a>
+								<a href="../Actions/quantitychange.php?decID=<?php echo $item['journal_id'] ?>">-</a><a href="#" class="border"><?php echo $item['quantity'] ?></a><a href="../Actions/quantitychange.php?incID=<?php echo $item['journal_id'] ?>">+</a>
 							</div>
 							<div class="col"><span>&#8373;</span> <?php echo $item['journal_price'] *  $item['quantity'] ?> <a href="../Actions/quantitychange.php?deleteID=<?php echo $item['journal_id'] ?>"><span class="close">&#10005;</span></a></div>
 						</div>
@@ -124,9 +124,9 @@ $total_price = total_checkout_lg_ctr($_SESSION['cid']);
 	</div>
 	<?php if (isset($_GET['message'])) : ?>
 
-<div class='alert' data-id="<? $_GET['message']; ?>"></div>
+		<div class='alert' data-id="<?php echo $_GET['message']; ?>"></div>
 
-<?php endif; ?>
+	<?php endif; ?>
 
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
